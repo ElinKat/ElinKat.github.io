@@ -43,7 +43,7 @@ export function sessionExpirationCheck(page) {
 		return;
 	}
 
-	// If no session and in profile page, navigate to index.html.
+	// If no session and in profile page, navigate to login.html.
 	if (JWTtoken === null && page === "intraPage") {
 		window.location.href = "login.html";
 		return;
