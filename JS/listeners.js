@@ -1,4 +1,4 @@
-import { logout as performLogout } from "./JS/logout.js";
+import { logout as performLogout } from "./logout.js";
 import { login } from "./login.js";
 
 export function loginHandler() {
