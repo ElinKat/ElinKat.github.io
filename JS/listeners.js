@@ -1,12 +1,12 @@
 import { logout as performLogout } from "./JS/logout.js";
-import { login} from "./JS/login.js";
+import { login as performLogin } from "./JS/login.js";
 
 export function loginHandler() {
 	const loginButton = document.getElementById("login");
-	loginButton.addEventListener("click", () => login());
+	loginButton.addEventListener("click", () => performLogin());
 	window.addEventListener("keydown", (e) => {
 		if (e.key == "Enter") {
-			login();
+			performLogin();
 		}
 	});
 }
