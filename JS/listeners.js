@@ -1,4 +1,4 @@
-// import { logout as performLogout } from "./JS/logout.js";
+import { logout as performLogout } from "./JS/logout.js";
 import { login } from "./login.js";
 
 export function loginHandler() {
@@ -14,7 +14,7 @@ export function loginHandler() {
 	});
 }
 
-// export function logoutHandler() {
-// 	const logoutButton = document.getElementById("logout");
-// 	logoutButton.addEventListener("click", () => performLogout());
-// }
+export function logoutHandler() {
+	const logoutButton = document.getElementById("logout");
+	logoutButton.addEventListener("click", () => performLogout());
+}
