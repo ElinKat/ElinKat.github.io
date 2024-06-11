@@ -29,7 +29,7 @@ export async function login() {
 		if (response.ok) {
 			const responseData = await response.json();
 			createSession(responseData);
-			window.location.href = "./template/intraPage.html";
+			window.location.href = "intraPage.html";
 		}
 	} catch (error) {
 		console.log("Failed to fetch from kood/jõhvi");

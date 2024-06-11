@@ -8,7 +8,7 @@ export function sessionTokenCheck() {
 		const timeNow = Date.now();
 
 		if (timeNow < expirationTime) {
-			window.location.href = "./template/intraPage.html";
+			window.location.href = "intraPage.html";
 		} else {
 			endSession();
 		}
