@@ -4,5 +4,5 @@ import { addListeners } from "./JS/listeners.js";
 
 sessionTokenCheck();
 addListeners();
-// sessionExpirationCheck();
+sessionExpirationCheck();
 login();
