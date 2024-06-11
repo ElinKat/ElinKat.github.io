@@ -3,12 +3,15 @@ import { login } from "./JS/login.js";
 
 export function loginHandler() {
 	const loginButton = document.getElementById("login");
+	console.log("here1");
 	loginButton.addEventListener("click", () => login());
-	// window.addEventListener("keydown", (e) => {
-	// 	if (e.key == "Enter") {
-	// 		login();
-	// 	}
-	//});
+	console.log("here2");
+
+	window.addEventListener("keydown", (e) => {
+		if (e.key == "Enter") {
+			login();
+		}
+	});
 }
 
 // export function logoutHandler() {

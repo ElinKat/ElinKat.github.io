@@ -2,6 +2,8 @@ import { createSession } from "./JS/session.js";
 
 // Login function to fetch the sign in JWT.
 export async function login() {
+	console.log("here3");
+
 	const usernameOrEmail = document.getElementById("username-email").value;
 	const password = document.getElementById("password").value;
 
@@ -20,6 +22,8 @@ export async function login() {
 			},
 			body: JSON.stringify({ query, credentials }),
 		});
+	console.log("here4");
+
 
 		if (!response.ok) {
 			alert("OH NO! Wrong username/email or password! Please try again!");
@@ -31,6 +35,8 @@ export async function login() {
 			createSession(responseData);
 			window.location.href = "intraPage.html";
 		}
+	console.log("here5");
+
 	} catch (error) {
 		console.log("Failed to fetch from kood/jõhvi");
 	}
