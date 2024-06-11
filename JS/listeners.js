@@ -1,5 +1,5 @@
 // import { logout as performLogout } from "./JS/logout.js";
-import { login } from "./JS/login.js";
+import { login } from "./login.js";
 
 export function loginHandler() {
 	const loginButton = document.getElementById("login");

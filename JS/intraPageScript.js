@@ -1,4 +1,4 @@
-import { profilePage } from "./JS/intraPage.js";
+import { profilePage } from "./intraPage.js";
 
 
 profilePage();

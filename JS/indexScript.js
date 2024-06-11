@@ -1,6 +1,6 @@
-import { sessionTokenCheck, sessionExpirationCheck } from "./JS/session.js";
-import { login } from "./JS/login.js";
-import { loginHandler } from "./JS/listeners.js";
+import { sessionTokenCheck, sessionExpirationCheck } from "./session.js";
+import { login } from "./login.js";
+import { loginHandler } from "./listeners.js";
 
 sessionTokenCheck();
 loginHandler();

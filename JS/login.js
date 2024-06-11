@@ -1,4 +1,4 @@
-import { createSession } from "./JS/session.js";
+import { createSession } from "./session.js";
 
 // Login function to fetch the sign in JWT.
 export async function login() {

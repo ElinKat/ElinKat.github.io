@@ -1,4 +1,4 @@
-import { endSession } from "./JS/session.js";
+import { endSession } from "./session.js";
 
 export function logout() {
 	endSession();
