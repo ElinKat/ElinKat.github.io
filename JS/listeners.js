@@ -16,5 +16,6 @@ export function loginHandler() {
 
 export function logoutHandler() {
 	const logoutButton = document.getElementById("logout");
+	console.log("here logout");
 	logoutButton.addEventListener("click", () => performLogout());
 }
