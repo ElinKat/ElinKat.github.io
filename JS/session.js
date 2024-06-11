@@ -45,7 +45,7 @@ export function sessionExpirationCheck(page) {
 
 	// If no session and in profile page, navigate to index.html.
 	if (JWTtoken === null && page === "intraPage") {
-		window.location.href = "./template/index.html";
+		window.location.href = "index.html";
 		return;
 	}
 
@@ -54,7 +54,7 @@ export function sessionExpirationCheck(page) {
 		const timeNow = Date.now();
 		if (timeNow > expirationTime) {
 			endSession();
-			window.location.href = "./template/index.html";
+			window.location.href = "index.html";
 		}
 	}
 }
