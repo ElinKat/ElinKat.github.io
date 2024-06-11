@@ -1,4 +1,4 @@
-// In login.html, checks if there is a token and if the token is not expired,
+// In index.html, checks if there is a token and if the token is not expired,
 // then it will redirect to intraPage.html
 export function sessionTokenCheck() {
 	const JWTtoken = sessionStorage.getItem("JWT");
@@ -36,16 +36,16 @@ function sessionExpirationTime(minutes) {
 
 // Checks if there is a "JWT" session with an "expires" field. If true, compares
 // it to current time. If current time is bigger than expires time, removes the
-// session and navigates back to login.html.
+// session and navigates back to index.html.
 export function sessionExpirationCheck(page) {
 	const JWTtoken = sessionStorage.getItem("JWT");
 	if (JWTtoken === null) {
 		return;
 	}
 
-	// If no session and in profile page, navigate to login.html.
+	// If no session and in profile page, navigate to index.html.
 	if (JWTtoken === null && page === "intraPage") {
-		window.location.href = "login.html";
+		window.location.href = "index.html";
 		return;
 	}
 
@@ -54,7 +54,7 @@ export function sessionExpirationCheck(page) {
 		const timeNow = Date.now();
 		if (timeNow > expirationTime) {
 			endSession();
-			window.location.href = "login.html";
+			window.location.href = "index.html";
 		}
 	}
 }
