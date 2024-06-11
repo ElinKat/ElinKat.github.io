@@ -30,3 +30,10 @@ Open ```ElinKat.github.io``` in your browser and log in using your intra usernam
 olen login.js 11 rea juures
 
 
+
+
+git add --all
+
+git commit -m "Initial commit"
+
+git push -u origin main
