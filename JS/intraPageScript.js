@@ -1,4 +1,3 @@
-import { profilePage } from "./intraPage.js";
+import { userData } from "./intraPage.js";
 
-
-profilePage();
+userData()
