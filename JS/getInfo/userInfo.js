@@ -1,30 +1,44 @@
 export const fetchData = async () => {
   // Your query to fetch user information, audit ratio, and XP details
-  const userInfoQuery = `
-    query {
+// Query for name, audit ratio and numbers, xp.
+const userInfoQuery = `
+    query user {
         user {
             id
+            login
+            firstName
+            lastName
+            totalUp
+            totalDown
+            auditRatio
+            xps {
+                amount
+                __typename
+                path
+            }
         }
     }
-  `;
+`;
 
-  try {
-    const response = await fetch('https://01.kood.tech/api/graphql-engine/v1/graphql', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ query: userInfoQuery }),
-    });
+// Fetch for user info.
+	const token = JSON.parse(sessionStorage.getItem("JWT"))["value"];
+	const query = userInfoQuery;
 
-    const data = await response.json();
+	try {
+		const info = await fetch("https://01.kood.tech/api/graphql-engine/v1/graphql", {
+			method: "POST",
+			headers: {
+				Authorization: "Bearer " + token,
+			},
+			body: JSON.stringify({ query }),
+		});
 
-    if (data.errors) {
-      console.error('GraphQL Errors:', data.errors);
-    } else {
-      console.log('Fetched User Info:', data);
-    }
-  } catch (error) {
-    console.error('Error fetching data:', error);
-  }
-};
+		const data = await info.json();
+		const userData = data.data.user[0];
+
+    console.log(userData);
+		return userData;
+	} catch (error) {
+		console.log(error);
+	}
+}
