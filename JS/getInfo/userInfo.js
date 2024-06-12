@@ -1,14 +1,10 @@
-// userInfo.js
-
 export const fetchData = async () => {
-  const query = `
+  // Your query to fetch user information, audit ratio, and XP details
+  const userInfoQuery = `
     query {
-      user {
-        id
-        login
-        firstName
-        lastName
-      }
+        user {
+            id
+        }
     }
   `;
 
@@ -18,10 +14,16 @@ export const fetchData = async () => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ query }),
+      body: JSON.stringify({ query: userInfoQuery }),
     });
+
     const data = await response.json();
-    console.log(data);
+
+    if (data.errors) {
+      console.error('GraphQL Errors:', data.errors);
+    } else {
+      console.log('Fetched User Info:', data);
+    }
   } catch (error) {
     console.error('Error fetching data:', error);
   }
