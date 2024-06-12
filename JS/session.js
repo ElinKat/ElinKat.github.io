@@ -37,7 +37,7 @@ function sessionExpirationTime(minutes) {
 // Checks if there is a "JWT" session with an "expires" field. If true, compares
 // it to current time. If current time is bigger than expires time, removes the
 // session and navigates back to index.html.
-export function sessionExpirationCheck(page) {
+export const sessionExpirationCheck = (page) =>{
 	const JWTtoken = sessionStorage.getItem("JWT");
 	if (JWTtoken === null) {
 		return;

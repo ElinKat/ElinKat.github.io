@@ -1,6 +1,6 @@
 import { sessionExpirationCheck } from "./session.js";
 import { logoutHandler } from "./listeners.js";
-import { fetchData } from './userInfo.js';
+import { fetchData } from './getInfo/userInfo.js';
 
 
 
@@ -19,7 +19,7 @@ export async function userData() {
 	// Fetch and process user data
 	await fetchData();
 
-
+	
   // Fetch the necessary data from the GraphQL API.
   // const uInfo = await fetching.userInfo();
   // const lInfo = await fetching.lvInfo();

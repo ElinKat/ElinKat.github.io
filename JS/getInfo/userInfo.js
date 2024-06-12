@@ -1,15 +1,17 @@
-const query = `
-  query {
-    user {
-      id
-      login
-      firstName
-      lastName
-    }
-  }
-`;
+// userInfo.js
 
-const fetchData = async () => {
+export const fetchData = async () => {
+  const query = `
+    query {
+      user {
+        id
+        login
+        firstName
+        lastName
+      }
+    }
+  `;
+
   try {
     const response = await fetch('https://01.kood.tech/api/graphql-engine/v1/graphql', {
       method: 'POST',
@@ -24,5 +26,3 @@ const fetchData = async () => {
     console.error('Error fetching data:', error);
   }
 };
-
-fetchData();
