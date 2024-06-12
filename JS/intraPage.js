@@ -1,22 +1,25 @@
 import { sessionExpirationCheck } from "./session.js";
 import { logoutHandler } from "./listeners.js";
-import { fetchData } from "./getInfo/userInfo.js";
+import { fetchData } from './getInfo/userInfo.js';
 
-// import { checkSessionExpiration } from "../sessions.js";
-// import { getLv, getXP, placeAudit, placeLv, placeName, placeXP } from "./getPlace.js";
-// import { getPassFail, placeFailCharts } from "./passFail.js";
-// import { addLogout } from "./listeners.js";
-// import * as fetching from "./fetching.js";
-// import { placeProgress } from "./progress.js";
-// import { placeAuditPie } from "./auditPie.js";
+
+
 //SIIN V}IKS ERALDI T}STA FUNKTSIOONID
 
-// Base func for the profile page.
+// Main function for the profile page
 export async function userData() {
-  sessionExpirationCheck("intraPage");
-  logoutHandler();
-  fetchData();
 
+
+	// Check if the session has expired
+	sessionExpirationCheck("intraPage");
+	
+	// Set up the logout button handler
+	logoutHandler();
+	
+	// Fetch and process user data
+	await fetchData();
+
+	
   // Fetch the necessary data from the GraphQL API.
   // const uInfo = await fetching.userInfo();
   // const lInfo = await fetching.lvInfo();
