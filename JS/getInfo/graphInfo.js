@@ -49,6 +49,7 @@ async function graphInfo() {
 		const data = await info.json();
 		console.log(data);
 
+    console.log(data.data.transaction);
 		return data.data.transaction;
 	} catch (error) {
 		console.log(error);

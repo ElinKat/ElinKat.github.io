@@ -25,6 +25,7 @@ async function passFailInfo() {
 		console.log(data);
 		const passFailData = data.data.progress;
 
+    console.log(passFailData);
 		return passFailData;
 	} catch (error) {
 		console.log(error);

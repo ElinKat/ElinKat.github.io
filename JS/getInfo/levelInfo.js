@@ -37,6 +37,7 @@ async function lvInfo() {
 		const data = await info.json();
 		const lvData = data.data.transaction;
 
+    console.log(lvData);
 		return lvData;
 	} catch (error) {
 		console.log(error);
