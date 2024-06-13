@@ -28,11 +28,21 @@ export async function userData() {
 	  document.getElementById("levels").textContent = `Levels: ${levelData.map(level => `${level.amount} (path: ${level.path}, date: ${level.createdAt})`).join(', ')}`;
 	}
 
+	const graphData = await graphInfo();
+	if (graphData) {
+	  document.getElementById("graph").textContent = `Graph Info: ${graphData.map(item => `XP: ${item.amount} (path: ${item.path}, date: ${item.createdAt})`).join(', ')}`;
+	}
+
+	const progressData = await progressInfo();
+	if (progressData) {
+	  document.getElementById("progress").textContent = `Progress Info: ${progressData.map(progress => `Grade: ${progress.grade} (path: ${progress.path}, date: ${progress.createdAt})`).join(', ')}`;
+	}
+
 	// Fetch and process user data
 	// await fetchUserData();
 	// await fetchLevelData();
-	await graphInfo();
-	await progressInfo();
+	// await graphInfo();
+	// await progressInfo();
 }
 
 userData();
