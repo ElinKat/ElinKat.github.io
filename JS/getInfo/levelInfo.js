@@ -29,8 +29,8 @@ export async function lvInfo() {
 				Authorization: "Bearer " + token,
 			},
 			body: JSON.stringify({
-				query: queries.lvQuery,
-				variables: queries.lvVariables,
+				query: lvQuery,
+				variables: lvVariables,
 			}),
 		});
 

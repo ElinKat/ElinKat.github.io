@@ -10,7 +10,7 @@ const passFailQuery = `
 
 export async function passFailInfo() {
 	const token = JSON.parse(sessionStorage.getItem("JWT"))["value"];
-	const query = queries.passFailQuery;
+	const query = passFailQuery;
 
 	try {
 		const info = await fetch("https://01.kood.tech/api/graphql-engine/v1/graphql", {
