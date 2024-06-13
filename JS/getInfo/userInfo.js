@@ -43,4 +43,4 @@ const userDataQuery = `
 	}
 }
 
-export {userInfo}
+export {fetchUserData}
