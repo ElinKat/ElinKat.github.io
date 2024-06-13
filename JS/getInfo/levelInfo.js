@@ -1,4 +1,4 @@
-export const levelInfo = async () => {
+export const fetchLevelData = async () => {
 
 
 const levelQuery = `
