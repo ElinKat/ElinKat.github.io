@@ -56,4 +56,4 @@ async function graphInfo() {
 	}
 }
 
-export {graphInfo}
+// export {graphInfo}
