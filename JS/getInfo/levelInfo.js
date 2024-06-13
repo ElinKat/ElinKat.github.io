@@ -1,3 +1,6 @@
+export const levelInfo = async () => {
+
+
 const levelQuery = `
   query transaction($order_by: [transaction_order_by!], $where: transaction_bool_exp) {
     transaction(order_by: $order_by, where: $where) {
@@ -19,7 +22,6 @@ const levelVariables = {
 	},
 };
 
-export async function levelInfo() {
 	const JWTtoken = JSON.parse(sessionStorage.getItem("JWT"))["value"];
 
 	try {

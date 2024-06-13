@@ -1,3 +1,6 @@
+export const graphicInfo = async () => {
+
+
 const xpQuery = `
   query transaction($order_by: [transaction_order_by!], $where: transaction_bool_exp) {
     transaction(order_by: $order_by, where: $where) {
@@ -30,8 +33,6 @@ const xpVariables = {
 	},
 };
 
-// Fetch for graph info
-export async function graphicInfo() {
     const JWTtoken = JSON.parse(sessionStorage.getItem("JWT"))["value"];
   
     try {

@@ -1,3 +1,6 @@
+export const progressInfo = async () => {
+
+
 const progressInfoQuery = `
   query progress {
     progress {
@@ -8,7 +11,6 @@ const progressInfoQuery = `
   }
 `;
 
-export async function progressInfo() {
 	const JWTtoken = JSON.parse(sessionStorage.getItem("JWT"))["value"];
 	const query = progressInfoQuery;
 
