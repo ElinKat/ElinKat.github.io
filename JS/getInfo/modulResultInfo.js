@@ -1,24 +1,34 @@
-import * as queries from "./queries.js";
+const passFailQuery = `
+  query progress {
+    progress {
+      createdAt
+      grade
+      path
+    }
+  }
+`;
 
-// Fetch for user info.
-async function userInfo() {
-	const JWTtoken = JSON.parse(sessionStorage.getItem("JWT"))["value"];
-	const query = queries.userInfoQuery;
+async function passFailInfo() {
+	const token = JSON.parse(sessionStorage.getItem("JWT"))["value"];
+	const query = queries.passFailQuery;
 
 	try {
-		const userInfo = await fetch("https://01.kood.tech/api/graphql-engine/v1/graphql", {
+		const info = await fetch("https://01.kood.tech/api/graphql-engine/v1/graphql", {
 			method: "POST",
 			headers: {
-				Authorization: "Bearer " + JWTtoken,
+				Authorization: "Bearer " + token,
 			},
 			body: JSON.stringify({ query }),
 		});
 
-		const jsonData = await userInfo.json();
-		const userData = jsonData.data.user[0];
+		const data = await info.json();
+		console.log(data);
+		const passFailData = data.data.progress;
 
-		return userData;
+		return passFailData;
 	} catch (error) {
 		console.log(error);
 	}
 }
+
+export {passFailInfo}
