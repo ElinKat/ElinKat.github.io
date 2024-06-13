@@ -20,26 +20,26 @@ const userDataQuery = `
     }
 `;
 
-// Fetch for user info.
-	const JWTtoken = JSON.parse(sessionStorage.getItem("JWT"))["value"];
-	const userQuery = userDataQuery;
+
+	const token = JSON.parse(sessionStorage.getItem("JWT"))["value"];
+	const query = userInfoQuery;
 
 	try {
-		const userInfo = await fetch("https://01.kood.tech/api/graphql-engine/v1/graphql", {
+		const info = await fetch("https://01.kood.tech/api/graphql-engine/v1/graphql", {
 			method: "POST",
 			headers: {
-				Authorization: "Bearer " + JWTtoken,
+				Authorization: "Bearer " + token,
 			},
-			body: JSON.stringify({ userQuery }),
+			body: JSON.stringify({ query }),
 		});
 
-		const data = await userInfo.json();
+		const data = await info.json();
 		const userData = data.data.user[0];
 
     console.log(userData);
 		return userData;
 	} catch (error) {
-    console.error('Error fetching user data:', error);
+		console.log(error);
 	}
 }
 
