@@ -22,7 +22,7 @@ const userDataQuery = `
 
 
 	const token = JSON.parse(sessionStorage.getItem("JWT"))["value"];
-	const query = userInfoQuery;
+	const query = userDataQuery;
 
 	try {
 		const info = await fetch("https://01.kood.tech/api/graphql-engine/v1/graphql", {
