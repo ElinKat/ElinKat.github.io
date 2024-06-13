@@ -8,7 +8,7 @@ const passFailQuery = `
   }
 `;
 
-async function passFailInfo() {
+export async function passFailInfo() {
 	const token = JSON.parse(sessionStorage.getItem("JWT"))["value"];
 	const query = queries.passFailQuery;
 
@@ -31,5 +31,3 @@ async function passFailInfo() {
 		console.log(error);
 	}
 }
-
-// export {passFailInfo}

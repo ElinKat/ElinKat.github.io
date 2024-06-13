@@ -19,7 +19,7 @@ const lvVariables = {
 	},
 };
 
-async function lvInfo() {
+export async function lvInfo() {
 	const token = JSON.parse(sessionStorage.getItem("JWT"))["value"];
 
 	try {
@@ -43,5 +43,3 @@ async function lvInfo() {
 		console.log(error);
 	}
 }
-
-// export {lvInfo}

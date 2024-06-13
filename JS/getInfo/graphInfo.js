@@ -30,30 +30,29 @@ const xpVariables = {
 	},
 };
 
-// Fetch for graph info.
-async function graphInfo() {
-	const token = JSON.parse(sessionStorage.getItem("JWT"))["value"];
-
-	try {
-		const info = await fetch("https://01.kood.tech/api/graphql-engine/v1/graphql", {
-			method: "POST",
-			headers: {
-				Authorization: "Bearer " + token,
-			},
-			body: JSON.stringify({
-				query: queries.xpQuery,
-				variables: queries.xpVariables,
-			}),
-		});
-
-		const data = await info.json();
-		console.log(data);
-
-    console.log(data.data.transaction);
-		return data.data.transaction;
-	} catch (error) {
-		console.log(error);
-	}
-}
-
-// export {graphInfo}
+// Fetch for graph info
+export async function graphInfo() {
+    const token = JSON.parse(sessionStorage.getItem("JWT"))["value"];
+  
+    try {
+      const info = await fetch("https://01.kood.tech/api/graphql-engine/v1/graphql", {
+        method: "POST",
+        headers: {
+          Authorization: "Bearer " + token,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          query: xpQuery,
+          variables: xpVariables,
+        }),
+      });
+  
+      const data = await info.json();
+      console.log(data);
+  
+      console.log(data.data.transaction);
+      return data.data.transaction;
+    } catch (error) {
+      console.log(error);
+    }
+  }
