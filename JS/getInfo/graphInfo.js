@@ -1,4 +1,4 @@
-export const graphicInfo = async () => {
+export const graphInfo = async () => {
 
 
 const xpQuery = `
