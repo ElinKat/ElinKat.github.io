@@ -33,8 +33,8 @@ const userDataQuery = `
 			body: JSON.stringify({ userQuery }),
 		});
 
-		const jsonData = await userInfo.json();
-		const userData = jsonData.data.user[0];
+		const data = await userInfo.json();
+		const userData = data.data.user[0];
 
     console.log(userData);
 		return userData;
