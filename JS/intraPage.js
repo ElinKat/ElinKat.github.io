@@ -22,11 +22,11 @@ export async function userData() {
 	// Fetch and process user data
 	await fetchUserData();
 
-	await lvInfo();
+	await levelInfo();
 
-	await graphInfo();
+	await graphicInfo();
 
-	await passFailInfo();
+	await progressInfo();
 
 	
   // Fetch the necessary data from the GraphQL API.

@@ -1,4 +1,4 @@
-const lvQuery = `
+const levelQuery = `
   query transaction($order_by: [transaction_order_by!], $where: transaction_bool_exp) {
     transaction(order_by: $order_by, where: $where) {
       type
@@ -8,7 +8,7 @@ const lvQuery = `
     }
   }
 `;
-const lvVariables = {
+const levelVariables = {
 	order_by: {
 		amount: "desc",
 	},
@@ -19,26 +19,26 @@ const lvVariables = {
 	},
 };
 
-export async function lvInfo() {
-	const token = JSON.parse(sessionStorage.getItem("JWT"))["value"];
+export async function levelInfo() {
+	const JWTtoken = JSON.parse(sessionStorage.getItem("JWT"))["value"];
 
 	try {
 		const info = await fetch("https://01.kood.tech/api/graphql-engine/v1/graphql", {
 			method: "POST",
 			headers: {
-				Authorization: "Bearer " + token,
+				Authorization: "Bearer " + JWTtoken,
 			},
 			body: JSON.stringify({
-				query: lvQuery,
-				variables: lvVariables,
+				query: levelQuery,
+				variables: levelVariables,
 			}),
 		});
 
-		const data = await info.json();
-		const lvData = data.data.transaction;
+		const jsonData = await info.json();
+		const levelData = jsonData.data.transaction;
 
-    console.log(lvData);
-		return lvData;
+    console.log("levelData:", levelData);
+		return levelData;
 	} catch (error) {
 		console.log(error);
 	}

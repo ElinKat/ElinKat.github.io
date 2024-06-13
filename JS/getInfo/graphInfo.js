@@ -31,14 +31,14 @@ const xpVariables = {
 };
 
 // Fetch for graph info
-export async function graphInfo() {
-    const token = JSON.parse(sessionStorage.getItem("JWT"))["value"];
+export async function graphicInfo() {
+    const JWTtoken = JSON.parse(sessionStorage.getItem("JWT"))["value"];
   
     try {
       const info = await fetch("https://01.kood.tech/api/graphql-engine/v1/graphql", {
         method: "POST",
         headers: {
-          Authorization: "Bearer " + token,
+          Authorization: "Bearer " + JWTtoken,
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
@@ -47,11 +47,12 @@ export async function graphInfo() {
         }),
       });
   
-      const data = await info.json();
+      const jsonData = await info.json();
       console.log(data);
-  
-      console.log(data.data.transaction);
-      return data.data.transaction;
+
+      const graphInfo = jsonData.data.transaction
+      console.log("GRAPHINFO:", graphInfo);
+      return graphInfo;
     } catch (error) {
       console.log(error);
     }

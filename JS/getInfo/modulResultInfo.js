@@ -1,4 +1,4 @@
-const passFailQuery = `
+const progressInfoQuery = `
   query progress {
     progress {
       createdAt
@@ -8,25 +8,25 @@ const passFailQuery = `
   }
 `;
 
-export async function passFailInfo() {
-	const token = JSON.parse(sessionStorage.getItem("JWT"))["value"];
-	const query = passFailQuery;
+export async function progressInfo() {
+	const JWTtoken = JSON.parse(sessionStorage.getItem("JWT"))["value"];
+	const query = progressInfoQuery;
 
 	try {
 		const info = await fetch("https://01.kood.tech/api/graphql-engine/v1/graphql", {
 			method: "POST",
 			headers: {
-				Authorization: "Bearer " + token,
+				Authorization: "Bearer " + JWTtoken,
 			},
 			body: JSON.stringify({ query }),
 		});
 
-		const data = await info.json();
+		const jsonData = await info.json();
 		console.log(data);
-		const passFailData = data.data.progress;
+		const progressData = jsonData.data.progress;
 
-    console.log(passFailData);
-		return passFailData;
+    console.log("MODULRESULTINFO:", progressData);
+		return progressData;
 	} catch (error) {
 		console.log(error);
 	}

@@ -21,22 +21,22 @@ const userDataQuery = `
 `;
 
 
-	const token = JSON.parse(sessionStorage.getItem("JWT"))["value"];
+	const JWTtoken = JSON.parse(sessionStorage.getItem("JWT"))["value"];
 	const query = userDataQuery;
 
 	try {
 		const info = await fetch("https://01.kood.tech/api/graphql-engine/v1/graphql", {
 			method: "POST",
 			headers: {
-				Authorization: "Bearer " + token,
+				Authorization: "Bearer " + JWTtoken,
 			},
 			body: JSON.stringify({ query }),
 		});
 
-		const data = await info.json();
-		const userData = data.data.user[0];
+		const jsonData = await info.json();
+		const userData = jsonData.data.user[0];
 
-    console.log(userData);
+    console.log("USERDATA:", userData);
 		return userData;
 	} catch (error) {
 		console.log(error);
