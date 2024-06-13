@@ -1,9 +1,9 @@
 import { sessionExpirationCheck } from "./session.js";
 import { logoutHandler } from "./listeners.js";
 import { fetchUserData } from './getInfo/userInfo.js';
-import { lvInfo } from "./getInfo/levelInfo.js";
-import { graphInfo } from "./getInfo/graphInfo.js";
-import { passFailInfo } from "./getInfo/modulResultInfo.js";
+import { levelInfo } from "./getInfo/levelInfo.js";
+import { graphicInfo } from "./getInfo/graphInfo.js";
+import { progressInfo } from "./getInfo/modulResultInfo.js";
 
 
 
