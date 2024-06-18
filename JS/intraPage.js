@@ -2,7 +2,7 @@ import { sessionExpirationCheck } from "./session.js";
 import { logoutHandler } from "./listeners.js";
 import { fetchUserData } from './getInfo/userInfo.js';
 import { fetchLevelData } from "./getInfo/levelInfo.js";
-import { graphInfo } from "./getInfo/graphInfo.js";
+import { fetchGraphInfo } from "./getInfo/graphInfo.js";
 import { progressInfo } from "./getInfo/modulResultInfo.js";
 
 
@@ -28,7 +28,7 @@ export async function userData() {
 	  document.getElementById("levels").textContent = `Levels: ${levelData.map(level => `${level.amount} (path: ${level.path}, date: ${level.createdAt})`).join(', ')}`;
 	}
 
-	const graphData = await graphInfo();
+	const graphData = await fetchGraphInfo();
 	if (graphData) {
 	  document.getElementById("graph").textContent = `Graph Info: ${graphData.map(item => `XP: ${item.amount} (path: ${item.path}, date: ${item.createdAt})`).join(', ')}`;
 	}
