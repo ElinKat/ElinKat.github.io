@@ -1,5 +1,5 @@
 import { userData } from "./intraPage.js";
-import { sessionExpirationCheck } from "./sessions.js";
+import { sessionExpirationCheck } from "./session.js";
 import { logoutHandler } from "./listeners.js";
 import { fetchUserData } from "./getInfo/userInfo.js";
 import { fetchLevelData } from "./getInfo/levelInfo.js";
