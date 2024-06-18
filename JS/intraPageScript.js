@@ -15,6 +15,8 @@ import {displayName} from "./tablesAndGraphs/userDashboard.js";
 
 
 userData()
+intraPage()
+
 
 // Base func for the profile page.
 export async function intraPage() {
@@ -47,4 +49,3 @@ export async function intraPage() {
 }
 
 
-intraPage()
