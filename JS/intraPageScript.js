@@ -3,11 +3,11 @@ import { sessionExpirationCheck } from "./session.js";
 import { logoutHandler } from "./listeners.js";
 import { fetchUserData } from "./getInfo/userInfo.js";
 import { fetchLevelData } from "./getInfo/levelInfo.js";
-import { fetchGraphInfo } from "./getInfo/graphInfo.js";
-import { fetchProgressInfo } from "./getInfo/modulResultInfo.js";
+// import { fetchGraphInfo } from "./getInfo/graphInfo.js";
+// import { fetchProgressInfo } from "./getInfo/modulResultInfo.js";
 
 import { calculateModuleXP } from "./tablesAndGraphs/userDashboard.js";
-import { getPassFail} from  "./tablesAndGraphs/passFailAnalysis.js";
+// import { getPassFail} from  "./tablesAndGraphs/passFailAnalysis.js";
 
 import {displayName} from "./tablesAndGraphs/userDashboard.js";
 
@@ -26,13 +26,13 @@ export async function intraPage() {
 	// Fetch the necessary data from the GraphQL API.
 	const userInfo = await fetchUserData();
 	const levelInfo = await fetchLevelData();
-	const graphInfo = await fetchGraphInfo();
-	const passAndFailInfo = await fetchProgressInfo();
+	// const graphInfo = await fetchGraphInfo();
+	// const passAndFailInfo = await fetchProgressInfo();
 
 
 	// Necessary variables for displaying data.
 	const { div01XP, piscineGO, piscineJS } = calculateModuleXP(userInfo.xps);
-	const { goExercises, jsExercises } = getPassFail(passAndFailInfo);
+	// const { goExercises, jsExercises } = getPassFail(passAndFailInfo);
 
 	// Display the data received.
 	displayName(`${userInfo.firstName} "${userInfo.login}" ${userInfo.lastName}`);
