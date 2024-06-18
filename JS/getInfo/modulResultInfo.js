@@ -1,4 +1,4 @@
-export const progressInfo = async () => {
+export const fetchProgressInfo = async () => {
 
 
 const progressInfoQuery = `

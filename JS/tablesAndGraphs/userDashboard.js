@@ -4,9 +4,15 @@
 //Modules Array, Defines the module names.
 const modules = ["DIV-01", "PISCINE GO", "PISCINE JS"];
 
+// Display the name of the user.
+export async function displayName(name) {
+	const h1 = document.getElementById("name-in-header");
+	h1.textContent = name;
+}
+
 
 //Displays audit numbers.
-function displayAudit(ratio, given, received) {
+export async function displayAudit(ratio, given, received) {
 	const auditRatio = document.getElementById("ratio");
 	const auditGiven = document.getElementById("given");
 	const auditReceived = document.getElementById("received");
@@ -18,8 +24,8 @@ function displayAudit(ratio, given, received) {
 
 
 //Displays the level and module for each module.
-function displayModuleLevel(levelObject) {
-	const displays = [...document.querySelectorAll(".xp-display")];
+export async function displayModuleLevel(levelObject) {
+	const displays = [...document.querySelectorAll(".xpDisplay")];
 
 	for (let i = 0; i < displays.length; i++) {
 		const xpDiv = document.createElement("div");
@@ -50,7 +56,7 @@ function displayModuleLevel(levelObject) {
 }
 
 //Displays the XP numbers for each module.
-function displayModuleXP(div01, go, js) {
+export async function displayModuleXP(div01, go, js) {
 	const xps = [...document.querySelectorAll(".module-xp")];
 	const array = [div01, go, js];
 
@@ -59,7 +65,7 @@ function displayModuleXP(div01, go, js) {
 	}
 }
 //Calculates the amount of XP for each module.
-function calculateModuleXP(xps) {
+export async function calculateModuleXP(xps) {
 	let div01 = 0;
 	let piscineGO = 0;
 	let piscineJS = 0;
@@ -82,7 +88,7 @@ function calculateModuleXP(xps) {
 }
 
 // Get the level of each module.
-function getModuleLevel(levels) {
+export async function getModuleLevel(levels) {
 	const levelObject = {
 		div01: 0,
 		piscineGO: 0,
@@ -101,5 +107,3 @@ function getModuleLevel(levels) {
 
 	return levelObject;
 }
-
-export { calculateModuleXP, getModuleLevel, displayAudit, displayModuleXP, displayModuleLevel };
