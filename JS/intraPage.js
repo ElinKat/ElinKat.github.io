@@ -3,7 +3,7 @@ import { logoutHandler } from "./listeners.js";
 import { fetchUserData } from './getInfo/userInfo.js';
 import { fetchLevelData } from "./getInfo/levelInfo.js";
 import { fetchGraphInfo } from "./getInfo/graphInfo.js";
-import { progressInfo } from "./getInfo/modulResultInfo.js";
+import { fetchProgressInfo } from "./getInfo/modulResultInfo.js";
 
 
 
@@ -33,7 +33,7 @@ export async function userData() {
 	  document.getElementById("graph").textContent = `Graph Info: ${graphData.map(item => `XP: ${item.amount} (path: ${item.path}, date: ${item.createdAt})`).join(', ')}`;
 	}
 
-	const progressData = await progressInfo();
+	const progressData = await fetchProgressInfo();
 	if (progressData) {
 	  document.getElementById("progress").textContent = `Progress Info: ${progressData.map(progress => `Grade: ${progress.grade} (path: ${progress.path}, date: ${progress.createdAt})`).join(', ')}`;
 	}
