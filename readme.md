@@ -27,5 +27,8 @@ Open ```ElinKat.github.io``` in your browser and log in using your intra usernam
 - Erlend Nukke
 - Elin Katriin Luik
 
-olen login.js 11 rea juures
+olen userdashboard rida 15, vaja ratio,given ja received nimed muuta 'ra htmls
+
+export async function displayAudit(ratio, given, received) 
+
 
