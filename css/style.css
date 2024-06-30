@@ -256,6 +256,24 @@ section{
     transition: stroke-dasharray 0.3s ease;
 }
 
+.audit {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	padding: 20px;
+	background: radial-gradient(circle, rgba(240, 242, 242, 1) 0%, rgba(129, 123, 223, 1) 100%, rgba(172, 142, 214, 1) 100%);
+	box-shadow: 0px 0px 19px 7px rgba(0, 0, 0, 0.75);
+}
+
+.pie {
+	fill: greenyellow;
+	stroke: red;
+	stroke-width: 200;
+	stroke-dasharray: 0 628;
+	transition: stroke-dasharray 0.3s ease;
+}
+
 
 
 /* Progress Chart */
