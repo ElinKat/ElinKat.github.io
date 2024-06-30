@@ -149,12 +149,15 @@ main {
     justify-content: center;
 }
 
-.flex.space-between {
-    justify-content: space-between;
+section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+
 /* XP Display */
-.xp-display {
+.xpDisplay {
     height: 100%;
     width: 23vw;
     border-radius: 10px;
@@ -168,7 +171,7 @@ main {
     padding: 20px;
 }
 
-.module-name, .module-level, .module-xp {
+/* .module-name, .module-level, .module-xp {
     padding: 5px;
     color: white;
 }
@@ -180,7 +183,9 @@ main {
 .module-lv {
     font-size: 70px;
     font-weight: bold;
-}
+} */
+
+
 
 /* Buttons */
 .btn {
@@ -215,8 +220,10 @@ main {
 
 }
 
+
+
 /* Audit Chart */
-#audit-ratio {
+#auditRatio {
     padding: 30px 0;
     width: 90%;
     display: flex;
@@ -228,22 +235,6 @@ main {
     background-color: rgba(0, 0, 0, 0.3);
 }
 
-#audit-chart {
-    margin: 0 auto;
-    transform: rotate(-90deg);
-    background: #444;
-    border-radius: 50%;
-    display: block;
-}
-
-.pie {
-    fill: #27ae60;
-    stroke: #c0392b;
-    stroke-width: 200;
-    stroke-dasharray: 0 628;
-    transition: stroke-dasharray 0.3s ease;
-}
-
 .legend {
     display: flex;
     align-items: center;
@@ -251,6 +242,21 @@ main {
     column-gap: 10px;
     margin-top: 10px;
 }
+
+.pie-chart {
+    margin: 0 auto;
+    transform: rotate(-90deg);
+    background: #444;
+    border-radius: 50%;
+    display: block;
+    fill: #27ae60;
+    stroke: #00c8f5;
+    stroke-width: 200;
+    stroke-dasharray: 0 628;
+    transition: stroke-dasharray 0.3s ease;
+}
+
+
 
 .fake-news {
     width: 10px;
