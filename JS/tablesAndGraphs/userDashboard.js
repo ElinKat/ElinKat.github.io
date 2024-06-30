@@ -66,7 +66,7 @@ export async function displayModuleXP(div01, go, js) {
 }
 //Calculates the amount of XP for each module.
 export async function calculateModuleXP(xps) {
-	let div01 = 0;
+	let div01XP = 0;
 	let piscineGO = 0;
 	let piscineJS = 0;
 
@@ -80,11 +80,11 @@ export async function calculateModuleXP(xps) {
 			piscineJS += xps[i].amount;
 			continue;
 		}
-		if (xps[i].path.includes("div-01")) div01 += xps[i].amount;
+		if (xps[i].path.includes("div-01")) div01XP += xps[i].amount;
 	}
 
 	// Return the xp values.
-	return { div01, piscineGO, piscineJS };
+	return { div01XP, piscineGO, piscineJS };
 }
 
 // Get the level of each module.
