@@ -2,7 +2,6 @@ import { createSession } from "./session.js";
 
 // Login function to fetch the sign in JWT.
 export async function login() {
-	console.log("here3");
 
 	const usernameOrEmail = document.getElementById("username-email").value;
 	const password = document.getElementById("password").value;
@@ -22,7 +21,6 @@ export async function login() {
 			},
 			body: JSON.stringify({ query, credentials }),
 		});
-	console.log("here4");
 
 
 		if (!response.ok) {
@@ -33,7 +31,7 @@ export async function login() {
 		if (response.ok) {
 			const responseData = await response.json();
 			createSession(responseData);
-			alert("Logged in successfully!");
+			// alert("Logged in successfully!");
 			window.location.href = "intraPage.html";
 		}
 	console.log("here5");
