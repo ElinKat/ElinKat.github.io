@@ -243,7 +243,7 @@ section{
     margin-top: 10px;
 }
 
-.audit-chart {
+.auditChart {
     margin: 0 auto;
     transform: rotate(-90deg);
     background: #444;
