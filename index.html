@@ -6,9 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <link rel="stylesheet" href="/css/style.css" >
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <div class="banner">        
+        <h1>Welcome to the Grphql!</h1>
+      </div>
 
 </head>
+
+<!-- <body>
+        <div class="log-in-box">
+            <h1>LOGIN</h1>
+            <form id="login-form">
+                <input id="username-email" type="text" class="input-text" placeholder="Username or Email" required />
+                <input id="password" type="password" class="input-text" placeholder="Password" required />
+                <input id="login" type="button" value="LOGIN" />
+            </form>
+            </div>
+
+    <script type="module" src="./JS/indexScript.js"></script>
+</body>
+
+</html> -->
+
+
 
 <body>
     <div class="center">
@@ -16,23 +36,20 @@
             <form id="form">
                 <h1>Login</h1>
                 <div class="input-box">
-                    <input type="text" placeholder="Username or email" required id="username">
+                    <input id="username-email" type="text" placeholder="Username or email" required>
                     <i class='bx bx-user'></i>
                 </div>
                 <div class="input-box">
-                    <input type="password" placeholder="Password" required id="password">
+                    <input id="password" type="password" placeholder="Password" required>
                     <i class='bx bx-lock-alt'></i>
                 </div>
                 <div id="error-message" class="error-message"></div>
-                <button type="submit" class="btn" id="login-submit">
+                <button type="submit" class="btn" id="login">
                     Login <i class='bx bx-log-in'></i>
                 </button>
             </form>
         </div>
     </div>
-
-    <script type="module" src="./JS/indexScript.js"></script>
-
 </body>
 
 </html>
