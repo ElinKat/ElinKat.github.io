@@ -243,7 +243,7 @@ section{
     margin-top: 10px;
 }
 
-.pie-chart {
+.audit-chart {
     margin: 0 auto;
     transform: rotate(-90deg);
     background: #444;
@@ -257,17 +257,6 @@ section{
 }
 
 
-
-.fake-news {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #c0392b;
-}
-
-.green {
-    background-color: #27ae60;
-}
 
 /* Progress Chart */
 #progress-section {
