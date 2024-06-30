@@ -14,7 +14,7 @@ export async function displayName(name) {
 //Displays audit numbers.
 export async function displayAudit(ratio, given, received) {
 	const auditRatio = document.getElementById("ratio");
-	const auditGiven = document.getElementById("done");
+	const auditGiven = document.getElementById("given");
 	const auditReceived = document.getElementById("received");
 
 	auditRatio.textContent = ratio.toFixed(2);

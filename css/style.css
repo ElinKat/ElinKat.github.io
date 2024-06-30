@@ -12,7 +12,7 @@ h1, h2 {
 
 h1 {
     font-size: 45px;
-    padding: 35px;
+    padding: 10px;
 }
 
 h2 {
@@ -24,20 +24,23 @@ p {
     margin: 20px;
 }
 
+.banner {
+    margin-top: 20px;
+    margin-bottom: 120px;
+}
+
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    background: url(bg.jpg)no-repeat;
+    background: url(bg.jpg) no-repeat center center fixed;
+    background-size: cover; /* Ensures the background image covers the entire screen */
     color: #e0e0e0;
-    background-size: cover; /* Ensures the image covers the entire background */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    background-attachment: fixed; /* Keeps the image fixed in place when scrolling */
-    background-position: center; /* Centers the image */
     margin: 0;
     padding: 0;
-    height: 100vh; /* Ensures the body takes up the full height of the viewport */
+    height: 100%;
+    overflow: hidden;
 }
 
 /* Header */
@@ -52,22 +55,22 @@ header {
     color: white;
 }
 
-#username {
+#name-in-header {
     color: white;
 }
 
-/* Main */
 main {
     width: 100%;
+    height: 100vh; /* Full viewport height */
     display: flex;
+    flex-wrap: wrap; /* Allows the wrappers to wrap to the next line */
+    padding: 10px; /* Adds padding around the main container */
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    row-gap: 20px;
+    align-content: flex-start;
 }
 
-/* loginBox and InputBox Styles */
-.loginBox {
+/* Wrapper and Input Box Styles */
+.wrapper {
     display: flex;
     flex-direction: column;
     width: 420px;
@@ -78,16 +81,17 @@ main {
     -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     color: white;
-    padding: 30px 40px;
+    padding: 20px 25px;
+    box-sizing: border-box; /* Ensures padding and border are included in the width */
+    margin: 10px; /* Adds margin around each wrapper */
 }
 
-.loginBox h1 {
-    font-size: 36px;
-    text-align: center;
+.wrapper h1 {
+    font-size: 20px;
     color: white;
 }
 
-.loginBox .inputBox {
+.wrapper .input-box {
     width: 100%;
     position: relative;
     height: 50px;
@@ -95,7 +99,12 @@ main {
     color: white;
 }
 
-.inputBox input {
+.progress-size {
+    width: 152vh;
+    height: 654px;
+}
+
+.input-box input {
     width: 100%;
     height: 100%;
     background: transparent;
@@ -104,15 +113,15 @@ main {
     border: 2px solid;
     border-radius: 40px;
     font-size: 16px;
-    color: white;
+    color: rgba(255, 255, 255, 0.199);
     padding: 20px 45px 20px 20px;
 }
 
-.inputBox input::placeholder {
+.input-box input::placeholder {
     color: rgba(255, 255, 255, 0.7);
 }
 
-.inputBox i {
+.input-box i {
     position: absolute;
     right: 20px;
     top: 50%;
@@ -121,10 +130,9 @@ main {
     color: rgba(255, 255, 255, 0.7);
 }
 
-.loginBox .btn {
+.wrapper .btn {
     width: 100%;
     height: 45px;
-    background-color: white;
     border: none;
     outline: none;
     border-radius: 40px;
@@ -134,14 +142,6 @@ main {
     font-weight: 600;
 }
 
-
-
-
-
-/* Intra page */
-
-
-
 /* Flex Containers */
 .flex {
     display: flex;
@@ -149,29 +149,17 @@ main {
     justify-content: center;
 }
 
-section{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.flex.space-between {
+    justify-content: space-between;
 }
-
 
 /* XP Display */
 .xpDisplay {
-    height: 100%;
-    width: 23vw;
-    border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.3);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 20px 0;
-    padding: 20px;
+    justify-content: space-between;
 }
 
-/* .module-name, .module-level, .module-xp {
+.module-name, .module-level, .module-xp {
     padding: 5px;
     color: white;
 }
@@ -183,9 +171,7 @@ section{
 .module-lv {
     font-size: 70px;
     font-weight: bold;
-} */
-
-
+}
 
 /* Buttons */
 .btn {
@@ -193,7 +179,7 @@ section{
     width: 180px;
     height: 50px;
     border-radius: 50px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.295);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     outline: none;
     cursor: pointer;
@@ -217,13 +203,12 @@ section{
     width: 90px;
     height: 25px;
     font-size: 12px;
+    
 
 }
 
-
-
 /* Audit Chart */
-#auditRatio {
+#audit-ratio {
     padding: 30px 0;
     width: 90%;
     display: flex;
@@ -235,6 +220,22 @@ section{
     background-color: rgba(0, 0, 0, 0.3);
 }
 
+#audit-chart {
+    margin: 0 auto;
+    transform: rotate(-90deg);
+    background: #444;
+    border-radius: 50%;
+    display: block;
+}
+
+.pie {
+    fill: #27ae60;
+    stroke: #c0392b;
+    stroke-width: 200;
+    stroke-dasharray: 0 628;
+    transition: stroke-dasharray 0.3s ease;
+}
+
 .legend {
     display: flex;
     align-items: center;
@@ -243,55 +244,15 @@ section{
     margin-top: 10px;
 }
 
-.audit-chart {
-    margin: 0 auto;
-    transform: rotate(-90deg);
-    background: #444;
+.fake-news {
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
-    display: block;
-    fill: #27ae60;
-    stroke: #00c8f5;
-    stroke-width: 200;
-    stroke-dasharray: 0 628;
-    transition: stroke-dasharray 0.3s ease;
+    background-color: #c0392b;
 }
 
-.audit {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-around;
-	padding: 20px;
-	background: radial-gradient(circle, rgba(240, 242, 242, 1) 0%, rgba(129, 123, 223, 1) 100%, rgba(172, 142, 214, 1) 100%);
-	box-shadow: 0px 0px 19px 7px rgba(0, 0, 0, 0.75);
-}
-
-.pie {
-	fill: greenyellow;
-	stroke: red;
-	stroke-width: 200;
-	stroke-dasharray: 0 628;
-	transition: stroke-dasharray 0.3s ease;
-}
-
-
-
-/* Progress Chart */
-#progress-section {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#progress {
-    width: 90%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: auto;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+.green {
+    background-color: #27ae60;
 }
 
 .graph .labels.x-labels, .graph .labels.y-labels {
@@ -324,44 +285,6 @@ section{
     fill: gray !important;
 }
 
-/* Pass/Fail Ratio */
-#pass-fail {
-    width: 100%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    column-gap: 5vw;
-}
-
-.pass-fail-div {
-    height: 500px;
-    background: rgba(0, 0, 0, 0.3);
-    padding: 10px;
-    border: 1px solid #34495e;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
-    overflow: auto;
-}
-
-.pass-fail-figcaption {
-    border-bottom: 1px solid #34495e;
-    margin-bottom: -10px;
-}
-
-.fail-pass-figure {
-    padding: 20px;
-}
-
-/* Footer */
-footer {
-    height: 10vh;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-}
 
 /* Scrollbar */
 ::-webkit-scrollbar {
