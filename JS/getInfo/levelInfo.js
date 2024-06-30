@@ -39,6 +39,7 @@ const levelVariables = {
 		const jsonData = await info.json();
 		const levelData = jsonData.data.transaction;
 
+    console.log("levelData:", levelData);
 		return levelData;
 	} catch (error) {
 		console.log(error);

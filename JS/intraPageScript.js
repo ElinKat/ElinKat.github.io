@@ -3,28 +3,21 @@ import { sessionExpirationCheck } from "./session.js";
 import { logoutHandler } from "./listeners.js";
 import { fetchUserData } from "./getInfo/userInfo.js";
 import { fetchLevelData } from "./getInfo/levelInfo.js";
-import { fetchGraphInfo } from "./getInfo/graphInfo.js";
-import { fetchProgressInfo } from "./getInfo/modulResultInfo.js";
-
-import { calculateModuleXP } from "./tablesAndGraphs/userDashboard.js";
-import { getPassFail } from "./tablesAndGraphs/passFailAnalysis.js";
-
-import {displayName} from "./tablesAndGraphs/userDashboard.js";
+import { displayName } from "./tablesAndGraphs/userDashboard.js";
 import { displayAudit } from "./tablesAndGraphs/userDashboard.js";
 import { displayModuleLevel } from "./tablesAndGraphs/userDashboard.js";
 import { displayModuleXP } from "./tablesAndGraphs/userDashboard.js";
-
 import { getModuleLevel } from "./tablesAndGraphs/userDashboard.js";
-
+import { calculateModuleXP } from "./tablesAndGraphs/userDashboard.js";
 import { audits } from "./tablesAndGraphs/audits.js";
-import { placeFailCharts } from "./tablesAndGraphs/passFailAnalysis.js";
 import { placeProgress } from "./tablesAndGraphs/progressChart.js";
+import { getPassFail, placeFailCharts } from "./tablesAndGraphs/passFailAnalysis.js";
+import { fetchGraphInfo } from "./getInfo/graphInfo.js";
+import { fetchProgressInfo } from "./getInfo/modulResultInfo.js";
 
 
-
-
-userData()
-intraPage()
+userData();
+intraPage();
 
 
 // Base func for the profile page.
@@ -38,17 +31,15 @@ export async function intraPage() {
 	const graphInfo = await fetchGraphInfo();
 	const passAndFailInfo = await fetchProgressInfo();
 
-
 	// Necessary variables for displaying data.
 	const { div01XP, piscineGO, piscineJS } = await calculateModuleXP(userInfo.xps);
 	const { goExercises, jsExercises } = getPassFail(passAndFailInfo);
 
 	// Display the data received.
-	displayName(`${userInfo.firstName} "${userInfo.login}" ${userInfo.lastName}`);
+	displayName(`${userInfo.firstName} ${userInfo.lastName}`);
 	displayAudit(userInfo.auditRatio, userInfo.totalUp, userInfo.totalDown);
 	displayModuleLevel(getModuleLevel(levelInfo));
 	displayModuleXP(div01XP, piscineGO, piscineJS);
-
 
 	audits(userInfo.auditRatio, userInfo.totalUp, userInfo.totalDown);
 	placeFailCharts(goExercises, jsExercises);

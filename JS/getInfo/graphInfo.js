@@ -49,6 +49,7 @@ const xpVariables = {
       });
   
       const jsonData = await info.json();
+
       const graphInfo = jsonData.data.transaction
       console.log("GRAPHINFO:", graphInfo);
       return graphInfo;
