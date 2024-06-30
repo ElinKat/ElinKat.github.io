@@ -34,7 +34,6 @@ export async function login() {
 			// alert("Logged in successfully!");
 			window.location.href = "intraPage.html";
 		}
-	console.log("here5");
 
 	} catch (error) {
 		console.log("Failed to fetch from kood/jõhvi");
