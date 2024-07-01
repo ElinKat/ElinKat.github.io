@@ -97,6 +97,7 @@ function placeProgress(progress, xp) {
 	justXPtext.setAttributeNS(null, "x", 20);
 	justXPtext.setAttributeNS(null, "y", 280);
 	justXPtext.setAttributeNS(null, "text-anchor", "middle");
+	justXPtext.setAttributeNS(null, "fill", "white"); 
 	justXPtext.textContent = "XP";
 	justXPtext.style.fontWeight = "bold";
 	gridYtext.appendChild(justXPtext);
@@ -107,6 +108,7 @@ function placeProgress(progress, xp) {
 	justMONTHtext.setAttributeNS(null, "x", 610);
 	justMONTHtext.setAttributeNS(null, "y", 560);
 	justMONTHtext.setAttributeNS(null, "text-anchor", "middle");
+	justMONTHtext.setAttributeNS(null, "fill", "white"); 
 	justMONTHtext.textContent = "MONTH";
 	justMONTHtext.style.fontWeight = "bold";
 	gridXtext.appendChild(justMONTHtext);

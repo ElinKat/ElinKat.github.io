@@ -169,7 +169,6 @@ main {
   font-weight: bold;
 }
 
-
 /* Buttons */
 .btn {
   transition: all 0.3s ease-in-out;
@@ -250,6 +249,20 @@ main {
 .dot {
   background-color: palegreen;
 }
+
+.graph .labels.x-labels,
+.graph .labels.y-labels {
+  font-size: 13px;
+  fill: #ecf0f1;
+}
+
+.labels .label-title {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 12px;
+  fill: #ecf0f1;
+}
+
 
 .axeText {
   display: none;
