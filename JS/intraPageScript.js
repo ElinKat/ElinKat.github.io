@@ -5,9 +5,9 @@ import { fetchUserData } from "./getInfo/userInfo.js";
 import { fetchLevelData } from "./getInfo/levelInfo.js";
 import { displayName } from "./tablesAndGraphs/userDashboard.js";
 import { displayAudit } from "./tablesAndGraphs/userDashboard.js";
-// import { displayModuleLevel } from "./tablesAndGraphs/userDashboard.js";
+import { displayModuleLevel } from "./tablesAndGraphs/userDashboard.js";
 import { displayModuleXP } from "./tablesAndGraphs/userDashboard.js";
-// import { getModuleLevel } from "./tablesAndGraphs/userDashboard.js";
+import { getModuleLevel } from "./tablesAndGraphs/userDashboard.js";
 import { calculateModuleXP } from "./tablesAndGraphs/userDashboard.js";
 import { audits } from "./tablesAndGraphs/audits.js";
 import { placeProgress } from "./tablesAndGraphs/progressChart.js";
@@ -34,7 +34,7 @@ export async function intraPage() {
 	// Display the data received.
 	displayName(`${userInfo.firstName} ${userInfo.lastName}`);
 	displayAudit(userInfo.auditRatio, userInfo.totalUp, userInfo.totalDown);
-	// displayModuleLevel(getModuleLevel(levelInfo));
+	displayModuleLevel(getModuleLevel(levelInfo));
 	displayModuleXP(div01XP, piscineGO, piscineJS);
 
 	audits(userInfo.auditRatio, userInfo.totalUp, userInfo.totalDown);
