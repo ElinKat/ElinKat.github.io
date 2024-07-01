@@ -12,6 +12,7 @@ import { calculateModuleXP } from "./tablesAndGraphs/userDashboard.js";
 import { audits } from "./tablesAndGraphs/audits.js";
 import { placeProgress } from "./tablesAndGraphs/progressChart.js";
 import { fetchGraphInfo } from "./getInfo/graphInfo.js";
+import { displayUserInfo } from "./tablesAndGraphs/userInfo.js";
 
 
 userData();
@@ -32,6 +33,7 @@ export async function intraPage() {
 	const { div01XP, piscineGO, piscineJS } = await calculateModuleXP(userInfo.xps);
 
 	// Display the data received.
+	await displayUserInfo();
 	displayName(`${userInfo.firstName} ${userInfo.lastName}`);
 	displayAudit(userInfo.auditRatio, userInfo.totalUp, userInfo.totalDown);
 	displayModuleLevel(getModuleLevel(levelInfo));

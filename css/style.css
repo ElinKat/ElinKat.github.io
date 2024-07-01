@@ -273,3 +273,61 @@ main {
 .axe:hover + .axeText {
   display: block;
 }
+
+
+
+.info-container {
+    width: 35%;
+    padding: 50px;
+    background: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    display: flex;
+    margin: 15px;
+    flex-direction: column;
+    height: auto;
+    justify-content: space-between;
+    cursor: pointer;
+    align-items: center;
+    perspective: 1000px;
+}
+
+.info-container img {
+    padding: 30px;
+    height: 400px;
+    align-items: center;
+}
+
+.inner-container {
+    font-size: 30px;
+    color: white;
+    padding: 15px;
+    width: 100%;
+    backface-visibility: hidden;
+    transition: transform 1s;
+}
+
+
+.front {
+    transform: rotateY(0deg);
+}
+
+.back {
+    transform: rotateY(180deg);
+    display: none;
+}
+
+.info-container.rotated .front {
+    display: none;
+}
+
+.info-container.rotated .back {
+    display: block;
+}
+
+.info-container.rotated .inner-container.front {
+    animation: rotateForward 1s forwards;
+}
+
+.info-container.rotated .inner-container.back {
+    animation: rotateBackward 1s forwards;
+}
