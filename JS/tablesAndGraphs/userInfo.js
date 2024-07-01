@@ -1,3 +1,24 @@
+export async function fetchUser(jwt) {
+    const token = JSON.parse(localStorage.getItem('jwtToken'), jwt);
+
+    try {
+        const info = await fetch('https://01.kood.tech/api/graphql-engine/v1/graphql', {
+            method: "POST",
+            headers: {
+
+                Authorization: "Bearer " + token,
+            },
+            body: JSON.stringify({ query: identification }),
+        });
+
+        const data = await info.json();
+        const userData = data.data.user[0] || null;
+        return userData;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 //UserInfo
 export async function displayUserInfo() {
     const clickableContainer = document.getElementById('clickable-container');
