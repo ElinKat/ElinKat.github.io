@@ -1,3 +1,26 @@
+export const identification = `
+    query user {
+        user {
+            id
+            login
+            firstName
+            lastName
+            auditRatio
+            totalUp
+            totalDown
+            attrs
+          
+            audits (order_by: {createdAt: asc}) {
+              grade
+             group {
+              path
+            }
+         
+          }
+        }
+    }
+`;
+
 export async function fetchUser(jwt) {
     const token = JSON.parse(localStorage.getItem('jwtToken'), jwt);
 
