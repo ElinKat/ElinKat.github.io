@@ -12,7 +12,7 @@ import { calculateModuleXP } from "./tablesAndGraphs/userDashboard.js";
 import { audits } from "./tablesAndGraphs/audits.js";
 import { placeProgress } from "./tablesAndGraphs/progressChart.js";
 import { fetchGraphInfo } from "./getInfo/graphInfo.js";
-import { displayUserInfo } from "./tablesAndGraphs/userInfo.js";
+import { displayUserInfo } from "./getInfo/userInfo.js";
 
 
 userData();
