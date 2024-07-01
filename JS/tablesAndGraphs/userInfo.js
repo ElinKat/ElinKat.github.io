@@ -36,6 +36,7 @@ export async function fetchUser(jwt) {
 
         const data = await info.json();
         const userData = data.data.user[0] || null;
+        console.log(userData)
         return userData;
     } catch (error) {
         console.log(error);
