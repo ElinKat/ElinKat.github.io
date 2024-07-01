@@ -21,6 +21,7 @@ const userDataQuery = `
 `;
 
 
+
 	const JWTtoken = JSON.parse(sessionStorage.getItem("JWT"))["value"];
 	const query = userDataQuery;
 
@@ -34,7 +35,7 @@ const userDataQuery = `
 		});
 
 		const jsonData = await info.json();
-		const userData = jsonData.data.user[0];
+		const userData = jsonData.data.user[0] || null;
 
     console.log("USERDATA:", userData);
 		return userData;
@@ -71,6 +72,7 @@ export async function displayUserInfo() {
               if (userInfoContainer) {
                   userInfoContainer.innerHTML = `
                       <p><strong>User:</strong> ${user}</p>
+                            <p><strong>Tel:</strong> ${tel}</p>
                       <p><strong>Email:</strong> ${email}</p>
                       <p><strong>Country:</strong> ${country}</p>
                       <p><strong>City:</strong> ${city}</p>
