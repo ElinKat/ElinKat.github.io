@@ -15,7 +15,7 @@ export function sessionTokenCheck() {
 	}
 }
 
-// End the session. For logout and expired sessions.
+// End the session. For expired sessions.
 export function endSession() {
 	sessionStorage.removeItem("JWT");
 }
@@ -25,7 +25,7 @@ export function createSession(JWT) {
 	sessionStorage.setItem("JWT", JSON.stringify({ value: JWT, expires: sessionExpirationTime(60) }));
 }
 
-// Create a session expiration date. As an input use the length in minutes.
+// Create a session expiration date.
 function sessionExpirationTime(minutes) {
 	const timeNow = new Date();
 	const timeout = timeNow.getTime() + minutes * 60000;

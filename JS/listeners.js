@@ -11,7 +11,7 @@ export function loginHandler() {
     }
     window.addEventListener("keydown", (e) => {
         if (e.key === "Enter") {
-            e.preventDefault(); // Prevent default form submission on Enter key
+            e.preventDefault();
             login();
         }
     });

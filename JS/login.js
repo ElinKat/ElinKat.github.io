@@ -40,8 +40,6 @@ export async function login() {
 	}
 }
 
-
-// Make the query string and differentiate between username and email.
 function getQueryAndCredentials(usernameOrEmail, password){
 	// Query when user inputs email and password.
 	if (isEmailValid(usernameOrEmail)) {
@@ -78,7 +76,8 @@ function getQueryAndCredentials(usernameOrEmail, password){
 
 
 // Encrypt data for transfer to GraphQL endpoint.
-//btoa is a built-in JavaScript function that encodes a string into Base64 format. It stands for "binary to ASCII".
+//btoa is a built-in JavaScript function that encodes a string into Base64 format.
+// It stands for "binary to ASCII".
 function encryptUserData(data) {
 	const encryptedData = btoa(data);
 	return encryptedData;

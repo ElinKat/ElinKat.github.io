@@ -1,6 +1,3 @@
-//For the JavaScript file that handles displaying user information such as names, audit ratios, levels, and XP for different modules
-
-
 //Modules Array, Defines the module names.
 const modules = ["DIV-01", "PISCINE GO", "PISCINE JS"];
 
@@ -24,36 +21,36 @@ export async function displayAudit(ratio, given, received) {
 
 
 //Displays the level and module for each module.
-export async function displayModuleLevel(levelObject) {
-	const displays = [...document.querySelectorAll(".xpDisplay")];
+// export async function displayModuleLevel(levelObject) {
+// 	const displays = [...document.querySelectorAll(".xpDisplay")];
 
-	for (let i = 0; i < displays.length; i++) {
-		const xpDiv = document.createElement("div");
-		const levelDiv = document.createElement("div");
-		const moduleDiv = document.createElement("div");
-		xpDiv.classList.add("xp-div", "flex");
-		levelDiv.classList.add("level-div", "flex");
-		moduleDiv.classList.add("module-div", "flex");
+// 	for (let i = 0; i < displays.length; i++) {
+// 		const xpDiv = document.createElement("div");
+// 		const levelDiv = document.createElement("div");
+// 		const moduleDiv = document.createElement("div");
+// 		xpDiv.classList.add("xp-div", "flex");
+// 		levelDiv.classList.add("level-div", "flex");
+// 		moduleDiv.classList.add("module-div", "flex");
 
-		const moduleLevel = document.createElement("span");
-		moduleLevel.textContent = levelObject[i];
-		moduleLevel.classList.add("module-level");
+// 		const moduleLevel = document.createElement("span");
+// 		moduleLevel.textContent = levelObject[i];
+// 		moduleLevel.classList.add("module-level");
 
-		const moduleName = document.createElement("span");
-		moduleName.textContent = modules[i];
-		moduleName.classList.add("module-name");
+// 		const moduleName = document.createElement("span");
+// 		moduleName.textContent = modules[i];
+// 		moduleName.classList.add("module-name");
 
-		const xpText = document.createElement("span");
-		xpText.classList.add("module-xp");
+// 		const xpText = document.createElement("span");
+// 		xpText.classList.add("module-xp");
 
-		xpDiv.appendChild(moduleName);
-		levelDiv.appendChild(moduleLevel);
-		moduleDiv.appendChild(xpText);
-		displays[i].appendChild(xpDiv);
-		displays[i].appendChild(levelDiv);
-		displays[i].appendChild(moduleDiv);
-	}
-}
+// 		xpDiv.appendChild(moduleName);
+// 		levelDiv.appendChild(moduleLevel);
+// 		moduleDiv.appendChild(xpText);
+// 		displays[i].appendChild(xpDiv);
+// 		displays[i].appendChild(levelDiv);
+// 		displays[i].appendChild(moduleDiv);
+// 	}
+// }
 
 //Displays the XP numbers for each module.
 export async function displayModuleXP(div01, go, js) {
@@ -88,22 +85,22 @@ export async function calculateModuleXP(xps) {
 }
 
 // Get the level of each module.
-export async function getModuleLevel(levels) {
-	const levelObject = {
-		div01: 0,
-		piscineGO: 0,
-		piscineJS: 0,
-	};
-	const moduleArray = ["div-01", "piscine-go", "piscine-js"];
+// export async function getModuleLevel(levels) {
+// 	const levelObject = {
+// 		div01: 0,
+// 		piscineGO: 0,
+// 		piscineJS: 0,
+// 	};
+// 	const moduleArray = ["div-01", "piscine-go", "piscine-js"];
 
-	for (let i = 0; i < moduleArray.length; i++) {
-		for (let j = 0; j < levels.length; j++) {
-			if (levels[j].path.includes(moduleArray[i])) {
-				levelObject[i] = levels[j].amount;
-				break;
-			}
-		}
-	}
+// 	for (let i = 0; i < moduleArray.length; i++) {
+// 		for (let j = 0; j < levels.length; j++) {
+// 			if (levels[j].path.includes(moduleArray[i])) {
+// 				levelObject[i] = levels[j].amount;
+// 				break;
+// 			}
+// 		}
+// 	}
 
-	return levelObject;
-}
+// 	return levelObject;
+// }
