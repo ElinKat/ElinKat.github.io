@@ -138,17 +138,21 @@ function placeProgress(progress, xp) {
 		axe.classList.add("axe");
 		axe.setAttributeNS(null, "cx", x);
 		axe.setAttributeNS(null, "cy", y);
-		axe.setAttributeNS(null, "r", 4);
+		axe.setAttributeNS(null, "r", 5);
+		axe.setAttributeNS(null, "fill", "gold"); // Change "red" to your desired color
 		axes.appendChild(axe);
 
 		const axeText = document.createElementNS(svgNS, "text");
 		axeText.classList.add("axeText");
 		axeText.setAttributeNS(null, "x", x - 10);
-		axeText.setAttributeNS(null, "y", y - 20);
+		axeText.setAttributeNS(null, "y", y - 30);
 		axeText.setAttributeNS(null, "text-anchor", "middle");
 		axeText.setAttributeNS(null, "font-weight", "bold");
 		axeText.textContent = `${dateToText} +${exercise.amount / 1000}kB`;
 		axes.appendChild(axeText);
+
+		    // Make sure the text element is immediately after the corresponding circle element
+			axe.parentNode.insertBefore(axeText, axe.nextSibling);
 	});
 
 	// Add Lines.
@@ -162,9 +166,9 @@ function placeProgress(progress, xp) {
 		line.setAttributeNS(null, "y1", coordinatesArr[i].y);
 		line.setAttributeNS(null, "x2", coordinatesArr[i + 1].x);
 		line.setAttributeNS(null, "y2", coordinatesArr[i + 1].y);
-		line.setAttributeNS(null, "stroke", "black");
+		line.setAttributeNS(null, "stroke", "palegreen");
 		line.setAttributeNS(null, "stroke-width", "1.5");
-		line.setAttributeNS(null, "fill", "rgb(121,0,121)");
+		line.setAttributeNS(null, "fill", "rgb(12,0,121)");
 		lines.appendChild(line);
 	}
 
