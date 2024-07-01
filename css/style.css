@@ -65,14 +65,14 @@ main {
   margin-left: 200px;
   height: 100vh; /* Full viewport height */
   display: flex;
-  flex-wrap: wrap; /* Allows the wrappers to wrap to the next line */
+  flex-wrap: wrap; /* Allows the tabels to wrap to the next line */
   padding: 10px; /* Adds padding around the main container */
   flex-direction: column;
   align-content: flex-start;
 }
 
-/* Wrapper and Input Box Styles */
-.wrapper {
+/* table and Input Box Styles */
+.table {
   display: flex;
   flex-direction: column;
   width: 420px;
@@ -83,10 +83,10 @@ main {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   padding: 20px 25px;
   box-sizing: border-box; /* Ensures padding and border are included in the width */
-  margin: 10px; /* Adds margin around each wrapper */
+  margin: 10px; /* Adds margin around each table */
 }
 
-.wrapper h1 {
+.table h1 {
   font-size: 23px;
   color: white;
 }
@@ -98,7 +98,7 @@ main {
 
 /* login box */
 
-.wrapper .input-box {
+.table .input-box {
   width: 100%;
   position: relative;
   height: 50px;
@@ -132,7 +132,7 @@ main {
   color: rgb(255, 255, 255);
 }
 
-.wrapper .btn {
+.table .btn {
   width: 100%;
   height: 45px;
   border: none;
@@ -166,16 +166,9 @@ main {
 .module-xp {
   padding: 5px;
   color: white;
-}
-
-.module-xp {
   font-weight: bold;
 }
 
-.module-lv {
-  font-size: 70px;
-  font-weight: bold;
-}
 
 /* Buttons */
 .btn {
@@ -256,51 +249,6 @@ main {
 
 .dot {
   background-color: palegreen;
-}
-
-.graph .labels.x-labels,
-.graph .labels.y-labels {
-  font-size: 13px;
-  fill: #ecf0f1;
-}
-
-.labels .label-title {
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 12px;
-  fill: #ecf0f1;
-}
-
-.bar {
-  fill: steelblue;
-  height: 22px;
-  transition: fill 0.3s ease;
-  cursor: pointer;
-}
-
-.bar:hover,
-.bar:focus {
-  fill: gray !important;
-}
-
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background-color: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #7f8c8d;
-  border-radius: 20px;
-  border: 2px solid transparent;
-  background-clip: content-box;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: #bdc3c7;
 }
 
 .axeText {
