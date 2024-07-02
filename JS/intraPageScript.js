@@ -1,7 +1,7 @@
 import { userData } from "./intraPage.js";
 import { sessionExpirationCheck } from "./session.js";
 import { logoutHandler } from "./listeners.js";
-import { fetchUserData } from "./getInfo/userInfo.js";
+// import { fetchUserData } from "./getInfo/userInfo.js";
 import { fetchLevelData } from "./getInfo/levelInfo.js";
 import { displayName } from "./tablesAndGraphs/userDashboard.js";
 import { displayAudit } from "./tablesAndGraphs/userDashboard.js";
@@ -12,7 +12,7 @@ import { calculateModuleXP } from "./tablesAndGraphs/userDashboard.js";
 import { audits } from "./tablesAndGraphs/audits.js";
 import { placeProgress } from "./tablesAndGraphs/progressChart.js";
 import { fetchGraphInfo } from "./getInfo/graphInfo.js";
-import { displayUserInfo } from "./getInfo/userInfo.js";
+// import { displayUserInfo } from "./getInfo/userInfo.js";
 import { fetchUser } from "./getInfo/userInfo.js";
 
 
@@ -27,7 +27,7 @@ export async function intraPage() {
 
 
 	// Fetch the necessary data from the GraphQL API.
-	const userInfo = await fetchUserData();
+	// const userInfo = await fetchUserData();
 	const userData = await fetchUser();
 	const levelInfo = await fetchLevelData();
 	const graphInfo = await fetchGraphInfo();
@@ -36,7 +36,7 @@ export async function intraPage() {
 	const { div01XP, piscineGO, piscineJS } = await calculateModuleXP(userInfo.xps);
 
 	// Display the data received.
-	displayUserInfo(userData);
+	// displayUserInfo(userData);
 
 
 	displayName(`${userInfo.firstName} ${userInfo.lastName}`);
