@@ -1,3 +1,27 @@
+const identification = `
+query user {
+    user {
+        id
+        login
+        firstName
+        lastName
+        auditRatio
+        totalUp
+        totalDown
+        attrs
+      
+        audits (order_by: {createdAt: asc}) {
+          grade
+         group {
+          path
+        }
+     
+      }
+    }
+}
+`;
+
+
 export const fetchUserData = async () => {
   // Your query to fetch user information, audit ratio, and XP details
 // Query for name, audit ratio and numbers, xp.
@@ -20,8 +44,6 @@ const userDataQuery = `
     }
 `;
 
-
-
 	const JWTtoken = JSON.parse(sessionStorage.getItem("JWT"))["value"];
 	const query = userDataQuery;
 
@@ -42,6 +64,49 @@ const userDataQuery = `
 	} catch (error) {
 		console.log(error);
 	}
+}
+
+
+export async function displayUserName() {
+    try {
+        const userData = await fetchUser();
+        if (userData) {
+            const fullName = `${userData.firstName} ${userData.lastName}`;
+            const userElement = document.getElementById('identification');
+            if (userElement) {
+                userElement.textContent = fullName;
+            } else {
+                console.error('Element with id "identification" not found');
+            }
+        }
+    } catch (error) {
+        console.error('Error displaying user name:', error);
+    }
+}
+
+
+
+export async function fetchUser(jwt) {
+    const token = JSON.parse(localStorage.getItem('jwtToken'), jwt);
+	const query = identification;
+
+
+    try {
+        const info = await fetch('https://01.kood.tech/api/graphql-engine/v1/graphql', {
+            method: "POST",
+            headers: {
+
+                Authorization: "Bearer " + token,
+            },
+            body: JSON.stringify({ query }),
+        });
+
+        const data = await info.json();
+        const userData = data.data.user[0] || null;
+        return userData;
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 
