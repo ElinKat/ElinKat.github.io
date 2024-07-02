@@ -124,7 +124,7 @@ export async function displayUserInfo() {
       clickableContainer.classList.toggle('rotated');
 
       try {
-          const info = await fetchUserData();
+          const info = await fetchUser();
           if (info) {
               const user = info.login;
               const attrs = typeof info.attrs === 'string' ? JSON.parse(info.attrs) : info.attrs;
