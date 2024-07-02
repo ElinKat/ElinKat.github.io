@@ -23,11 +23,11 @@ intraPage();
 export async function intraPage() {
 	sessionExpirationCheck("intraPage");
 	logoutHandler();
-	displayUserInfo();
 
 
 	// Fetch the necessary data from the GraphQL API.
 	const userInfo = await fetchUserData();
+	const userData = await fetchUser();
 	const levelInfo = await fetchLevelData();
 	const graphInfo = await fetchGraphInfo();
 
@@ -35,6 +35,7 @@ export async function intraPage() {
 	const { div01XP, piscineGO, piscineJS } = await calculateModuleXP(userInfo.xps);
 
 	// Display the data received.
+	displayUserInfo(userData);
 
 
 	displayName(`${userInfo.firstName} ${userInfo.lastName}`);

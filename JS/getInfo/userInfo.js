@@ -43,24 +43,6 @@ const userDataQuery = `
 }
 
 
-export async function displayUserName() {
-    try {
-        const userData = await fetchUser();
-        if (userData) {
-            const fullName = `${userData.firstName} ${userData.lastName}`;
-            const userElement = document.getElementById('identification');
-            if (userElement) {
-                userElement.textContent = fullName;
-            } else {
-                console.error('Element with id "identification" not found');
-            }
-        }
-    } catch (error) {
-        console.error('Error displaying user name:', error);
-    }
-}
-
-
 
 export async function fetchUser(jwt) {
 
