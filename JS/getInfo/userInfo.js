@@ -43,9 +43,7 @@ const userDataQuery = `
 }
 
 
-
-export async function fetchUser(jwt) {
-
+export const fetchUser = async (jwt) => {
 
     const identification = `
 query user {
