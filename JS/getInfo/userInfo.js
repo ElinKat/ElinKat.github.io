@@ -1,27 +1,3 @@
-const identification = `
-query user {
-    user {
-        id
-        login
-        firstName
-        lastName
-        auditRatio
-        totalUp
-        totalDown
-        attrs
-      
-        audits (order_by: {createdAt: asc}) {
-          grade
-         group {
-          path
-        }
-     
-      }
-    }
-}
-`;
-
-
 export const fetchUserData = async () => {
   // Your query to fetch user information, audit ratio, and XP details
 // Query for name, audit ratio and numbers, xp.
@@ -57,7 +33,7 @@ const userDataQuery = `
 		});
 
 		const jsonData = await info.json();
-		const userData = jsonData.data.user[0] || null;
+		const userData = jsonData.data.user[0];
 
     console.log("USERDATA:", userData);
 		return userData;
@@ -87,6 +63,31 @@ export async function displayUserName() {
 
 
 export async function fetchUser(jwt) {
+
+
+    const identification = `
+query user {
+    user {
+        id
+        login
+        firstName
+        lastName
+        auditRatio
+        totalUp
+        totalDown
+        attrs
+      
+        audits (order_by: {createdAt: asc}) {
+          grade
+         group {
+          path
+        }
+     
+      }
+    }
+}
+`;
+
     const token = JSON.parse(localStorage.getItem('jwtToken'), jwt);
 	const query = identification;
 
